@@ -84,7 +84,8 @@ define i = Character("Irisu", color="#DDABC6")
 
 label start:
     
-    $ persistent.game_ended = False
+    python:
+        persistent.game_ended = False
     
     scene black with dissolve
     
@@ -161,64 +162,67 @@ label start:
     window hide
     window auto True
     
-    play sound musmus026
-    show pink_bloop
-    pause 0.6
-    show white_flash
-    pause 1.2
+    $ pink = persistent.game_ended
     
-    show cmc2
-    show cmt1
-    with Dissolve(0.9)
-    pause 0.6
-    
-    show cmt1 as cmt1:
-        subpixel True
-        #linear 1.2 zoom 0.5 align(0.275, -0.1)
-        linear 1.2 zoom 0.5 align(0.375, 0.45)
-    show cmc1_b as cmc2 with Dissolve(1.2)
-    
-    pause 0.6
-    
-    show cmt4 behind cmt1:
-        zoom 0.5 align(0.275, -0.1)
-    show cmm1
-    with Dissolve(1.2)
+    if pink:
+        play sound musmus026
+        show pink_bloop
+        pause 0.6
+        show white_flash
+        pause 1.2
         
-    pause
-    stop sound fadeout 2
-    scene black with Dissolve(1.5)
-    pause
+        show cmc2
+        show cmt1
+        with Dissolve(0.9)
+        pause 0.6
+        
+        show cmt1 as cmt1:
+            subpixel True
+            #linear 1.2 zoom 0.5 align(0.275, -0.1)
+            linear 1.2 zoom 0.5 align(0.375, 0.45)
+        show cmc1_b as cmc2 with Dissolve(1.2)
+        
+        pause 0.6
+        
+        show cmt4 behind cmt1:
+            zoom 0.5 align(0.275, -0.1)
+        show cmm1
+        with Dissolve(1.2)
+            
+        pause
+        stop sound fadeout 2
+        scene black with Dissolve(1.5)
+        pause
     
     ### Blue
-    
-    play sound musmus026
-    show blue_bloop
-    pause 0.6
-    show white_flash
-    pause 1.2
-    
-    show cmc4
-    show cmt1
-    with Dissolve(0.9)
-    pause 0.6
-    
-    show cmt1 as cmt1:
-        subpixel True
-        linear 1.2 zoom 0.5 align(0.375, 0.45)
-    show cmc3 as cmc4 with Dissolve(1.2)
-    
-    pause 0.6
-    
-    show cmt4 behind cmt1:
-        zoom 0.5 align(0.275, -0.1)
-    show cmm2
-    with Dissolve(1.2)
-    
-    pause
-    stop sound fadeout 2
-    scene black with Dissolve(1.5)
-    pause
+    else:
+        play sound musmus026
+        show blue_bloop
+        pause 0.6
+        show white_flash
+        pause 1.2
+        
+        show cmc4
+        show cmt1
+        with Dissolve(0.9)
+        pause 0.6
+        
+        show cmt1 as cmt1:
+            subpixel True
+            linear 1.2 zoom 0.5 align(0.375, 0.45)
+        show cmc3 as cmc4 with Dissolve(1.2)
+        
+        pause 0.6
+        
+        show cmt4 behind cmt1:
+            zoom 0.5 align(0.275, -0.1)
+        show cmm2
+        with Dissolve(1.2)
+        
+        pause
+        stop sound fadeout 2
+        scene black with Dissolve(1.5)
+        pause
     
     $ quick_menu = True
     
@@ -237,5 +241,7 @@ label start:
     "- END OF VIDEO TEST -"
     
     $ persistent.game_ended = True
+    
+    "Oh before this test ends, I wonder what will happen if you load back to before the animation test starts."
     
     return

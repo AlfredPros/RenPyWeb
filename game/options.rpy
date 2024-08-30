@@ -52,7 +52,7 @@ define gui.about = _p("""
                       Made by AlfredPros. Test-only purposes!
                       
                       Arts:{p=0}
-                      {a=https://twitter.com/_satchely}Satchely{/a}
+                      {a=https://twitter.com/_satchely}Satchely{/a}{p=0}
                       {a=https://www.pixiv.net/member.php?id=499790}{font=mikachan.otf}笹米ぱんだ{/font}{/a}{p=0}
                       {a=https://www.pixiv.net/en/users/4213451}{font=mikachan.otf}さわてぃ{/font}{/a}{p=0}
                       {a=https://x.com/natsukyuu}natsukyuu{/a}{p=0}
